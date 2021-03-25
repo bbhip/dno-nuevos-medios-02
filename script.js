@@ -2,9 +2,11 @@ var elEncabezado = document.querySelector("header");
 var laHora = new Date().getHours();
 var dondeEstas;
 if (document.body.classList.contains("portada")) {
-    dondeEstas = true;
+    dondeEstas = 1;
+} else if (document.body.classList.contains("pagina")){
+    dondeEstas = 2;
 } else {
-    dondeEstas = false;
+	dondeEstas = 3;
 }
 var elSaludo;
 if (5 < laHora && laHora < 12) {
@@ -21,12 +23,15 @@ function setup() {
     createElement("h1", elSaludo).parent(elEncabezado).id("title");
     createA("index.html", "index").parent("vinculos");
     createA("page.html", "page").parent("vinculos");
+    createA("dibujito.html", "dibujito").parent("vinculos");
     elColor = createColorPicker("#555555").parent("controles");
     elSlider = createSlider(1, 5, 3).parent("controles");
-    if (dondeEstas) {
+    if (dondeEstas == 1) {
         portada();
-    } else {
+    } else if (dondeEstas == 2) {
         pagina();
+    } else {
+    	dibujito();
     }
 }
 function draw() {
@@ -43,4 +48,8 @@ function portada() {
 function pagina() {
     createSpan("! Tu es en page.html").parent("title");
     select("a:nth-child(2)").style("font-weight", "bold").style("color");
+}
+function dibujito() {
+    createSpan("! Je t'ai fait un dessin :-)").parent("title");
+    select("a:nth-child(3)").style("font-weight", "bold").style("color");
 }

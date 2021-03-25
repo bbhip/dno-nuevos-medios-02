@@ -8,6 +8,14 @@
     /* ¿Qué valor de contrast-ratio está utilizando? Valor 5 :-); */
 }
 
+img {
+    width:60%;
+    margin-top:80px;
+    display:block;
+    margin-right:auto;
+    margin-left: auto;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -76,12 +84,4 @@ footer div#controles input[type=color]{
 footer div#controles input[type=range]{
     width:4rem;
     margin:0 0.5rem;
-}
-
-img {
-    width:60%;
-    margin-top:100px;
-    display:block;
-    margin-right:auto;
-    margin-left: auto;
 }
